@@ -1,4 +1,4 @@
-10up Scaffold
+Zao Starter Theme
 =====================
 
 At 10up, we strive to provide digital products that yield a top-notch user experience. In order to improve both our efficiency and consistency, we need to standardize what we use and how we use it. This theme scaffold allows us to share initial set up procedures to make sure all projects can get up and running as quickly as possible while closely adhering to 10up's high quality standards.
@@ -22,11 +22,11 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 - Rename folder theme-scaffold -> your project's name
 - Do case-sensitive search/replace for the following:
 
-	- TenUpScaffold
-	- TENUP_SCAFFOLD
-	- tenup-scaffold
-	- tenup_scaffold
-	- 10up Scaffold
+	- ZaoStarterTheme
+	- ZAO_STARTERTHEME
+	- zao-starter-theme
+	- ZAO_STARTERTHEME
+	- Zao Starter Theme
 
 - `cd` into the theme folder
 - run `npm run start`

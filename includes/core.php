@@ -5,7 +5,7 @@
  * @package ThemeScaffold\Core
  */
 
-namespace TenUpScaffold\Core;
+namespace ZaoStarterTheme\Core;
 
 /**
  * Set up theme defaults and register supported WordPress features.
@@ -27,13 +27,13 @@ function setup() {
  * Makes Theme available for translation.
  *
  * Translations can be added to the /languages directory.
- * If you're building a theme based on "tenup-scaffold", change the
- * filename of '/languages/TenUpScaffold.pot' to the name of your project.
+ * If you're building a theme based on "zao-starter-theme", change the
+ * filename of '/languages/ZaoStarterTheme.pot' to the name of your project.
  *
  * @return void
  */
 function i18n() {
-	load_theme_textdomain( 'tenup-scaffold', TENUP_SCAFFOLD_PATH . '/languages' );
+	load_theme_textdomain( 'zao-starter-theme', ZAO_STARTERTHEME_PATH . '/languages' );
 }
 
 /**
@@ -67,9 +67,9 @@ function scripts() {
 
 	wp_enqueue_script(
 		'frontend',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/frontend.min.js',
+		ZAO_STARTERTHEME_TEMPLATE_URL . '/dist/js/frontend.min.js',
 		[],
-		TENUP_SCAFFOLD_VERSION,
+		ZAO_STARTERTHEME_VERSION,
 		true
 	);
 
@@ -84,17 +84,17 @@ function styles() {
 
 	wp_enqueue_style(
 		'styles',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/style.min.css',
+		ZAO_STARTERTHEME_TEMPLATE_URL . '/dist/css/style.min.css',
 		[],
-		TENUP_SCAFFOLD_VERSION
+		ZAO_STARTERTHEME_VERSION
 	);
 
 	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
 		wp_enqueue_style(
 			'styleguide',
-			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/styleguide.min.css',
+			ZAO_STARTERTHEME_TEMPLATE_URL . '/dist/css/styleguide.min.css',
 			[],
-			TENUP_SCAFFOLD_VERSION
+			ZAO_STARTERTHEME_VERSION
 		);
 	}
 }
