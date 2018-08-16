@@ -1,15 +1,15 @@
 import gulp from 'gulp';
 import postcss from 'gulp-postcss';
+import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import pump from 'pump';
 
 gulp.task( 'css', ( cb ) => {
 	const fileSrc = [
-		'./assets/css/admin/admin-style.css',
-		'./assets/css/frontend/editor-style.css',
-		'./assets/css/frontend/style.css',
-		'./assets/css/shared/shared-style.css',
-		'./assets/css/styleguide/styleguide.css'
+		'./assets/scss/admin/admin-style.scss',
+		'./assets/scss/frontend/style.scss',
+		'./assets/scss/shared/shared-style.scss',
+		'./assets/scss/styleguide/styleguide.scss'
 	];
 	const fileDest = './dist';
 
@@ -24,6 +24,7 @@ gulp.task( 'css', ( cb ) => {
 
 	pump( [
 		gulp.src( fileSrc ),
+		sass().on('error', sass.logError),
 		sourcemaps.init( {
 			loadMaps: true
 		} ),
