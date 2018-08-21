@@ -1,0 +1,92 @@
+
+// Object: _buttons
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Variables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$o-btn-disabled-bg-color: silver;
+$o-btn-disabled-text-color: black;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Standard Button
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.o-btn {
+  appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: $global-border-radius;
+  display: inline-block;
+  text-decoration: none;
+  line-height: normal;
+  font-family: $font-family-normal;
+
+  &[disabled] {
+    background-color: $o-btn-disabled-bg-color !important;
+    color: $o-btn-disabled-text-color !important;
+
+    @include hocus {
+      background-color: inherit;
+    }
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Default Button
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.o-btn--default {
+  background-color: $palette-primary;
+  color: $palette-secondary;
+  padding: rem-calc(15 30);
+
+  @include hocus {
+    background-color: $palette-secondary;
+    color: $palette-primary;
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Primary Button
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.o-btn--primary {
+  background-color: $palette-accent;
+  color: $palette-secondary;
+  padding: rem-calc(18 48);
+  font-weight: bold;
+
+  @include hocus {
+    background-color: $palette-primary;
+    color: $palette-secondary;
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Icon Button
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.o-btn--icon {
+  position: relative;
+  padding: rem-calc(15 30 15 60);
+
+  &:before {
+    background-image: url('');
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Full Width Button
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.o-btn--full {
+  width: 100%;
+  text-align: center;
+}
