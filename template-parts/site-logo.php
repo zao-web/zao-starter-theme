@@ -20,12 +20,12 @@
 
 		<?php if ( has_custom_logo() ) : ?>
 
-			<img itemprop="logo" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>">
-			<span class="screen-reader-text"><?php get_bloginfo( 'name' ); ?></span>
+			<img class="o-site-header__logo-image" itemprop="logo" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>">
+			<span class="o-screen-reader-text"><?php get_bloginfo( 'name' ); ?></span>
 
 		<?php else : ?>
 
-			<h1><?php get_bloginfo( 'name' ); ?></h1>
+			<h1 class="o-site-header__site-title"><?php get_bloginfo( 'name' ); ?></h1>
 
 		<?php endif; ?>
 	</a>
