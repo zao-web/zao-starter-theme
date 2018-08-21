@@ -3,6 +3,7 @@ bower_components
 release
 phpunit.xml
 .idea
+vendor
 
 # Project Files
 dist
@@ -26,3 +27,7 @@ Session.vim
 # Windows
 Thumbs.db
 Desktop.ini
+
+
+# Don't ignore
+!/assets/**
