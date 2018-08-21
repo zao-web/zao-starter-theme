@@ -1,0 +1,39 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Layout: _grid
+// Main file for the Grid. Will include the grid mixin
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Internal value to store the end column float direction
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$-zf-end-float: if($grid-column-align-edge, $global-right, $global-left);
+
+// The last piece to transition the responsive gutter feature
+// Remove this in 6.3
+$grid-column-responsive-gutter: null !default;
+@if $grid-column-responsive-gutter {
+  // scss-lint:disable DebugStatement
+  @warn 'Rename $grid-column-responsive-gutter to $grid-column-gutter to remove this warning.';
+  $grid-column-gutter: $grid-column-responsive-gutter;
+}
+
+// If a single value is passed as a gutter, convert it to a map so the code knows what to do with it
+@if type-of($grid-column-gutter) == 'number' {
+  $grid-column-gutter: (
+    small: $grid-column-gutter,
+  );
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Grid
+// Include either the flex grid
+// or the legacy float grid
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@if $global-grid-select == 'normal' {
+  @include flex-grid;  
+} @else if $global-grid-select == 'legacy' {
+  @include base-grid;
+} @else {
+  @warn 'Error: Please use the correct terms for selecting the grid, "normal" to use the Flexbox based grid, "legacy" for using the Float based grid.'
+}
