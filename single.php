@@ -26,9 +26,6 @@ get_header();
 	  <?php comments_template(); ?>
 	  <!-- Comments -->
 
-	  <!-- Sharing -->
-	  <?php get_template_part( 'template-parts/module-sharing' ); ?>
-	  <!-- /Sharing -->
 	</article>
   </div>
 <?php endwhile; ?>
