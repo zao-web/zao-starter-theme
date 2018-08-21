@@ -13,9 +13,7 @@
 <header id="masthead" class="o-site-header u-slab-tertiary" role="banner">
   <div class="l-wrap o-site-header__row">
 	<div class="o-site-header__logo">
-	  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="u-text-color-primary">
 		<?php get_template_part( 'template-parts/site-logo' ); ?>
-	  </a>
 	</div>
 	<div class="o-site-header__toggler">
 	  <button role="button" class="js-site-toggle-menu u-text-caps o-site-header__toggle"><?php esc_html_e( 'Menu', 'zao-starter-theme' ); ?></button>
