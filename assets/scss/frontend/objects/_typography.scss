@@ -1,0 +1,80 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Objects: _typography
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Headings
+// Style both the <h> tag and also a class
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+h1,
+.o-heading-1 {
+  @include breakpoint(large up) {
+    font-size: $font-size-heading-one;
+  }
+
+  @include breakpoint(small up) {
+    font-size: $font-size-heading-three;
+  }
+}
+
+h2,
+.o-heading-2 {
+  font-size: $font-size-heading-two;
+
+  @include breakpoint(large up) {
+    font-size: $font-size-heading-two;
+  }
+
+  @include breakpoint(small up) {
+    font-size: rem-calc(30);
+  }
+}
+
+h3,
+.o-heading-3 {
+  @include breakpoint(large up) {
+    font-size: $font-size-heading-three;
+  }
+
+  @include breakpoint(small up) {
+    font-size: 3.0rem;
+  }
+}
+
+h4,
+.o-heading-4 {
+  @include breakpoint(large up) {
+    font-size: $font-size-heading-four;
+  }
+
+  @include breakpoint(small up) {
+    font-size: 2.0rem;
+  }
+}
+
+h5,
+.o-heading-5 {
+  @include breakpoint(small up) {
+    font-size: $font-size-heading-five;
+  }
+}
+
+h6,
+.o-heading-6 {
+  @include breakpoint(small up) {
+    font-size: $font-size-primary;
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Sub Headings
+// Sizes of Sub Headings are inherited from the tag
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.o-sub-heading-1,
+.o-sub-heading-2, 
+.o-sub-heading-3, 
+.o-sub-heading-4, 
+.o-sub-heading-5, 
+.o-sub-heading-6 {
+  color: lighten($palette-heading, 30);
+}
