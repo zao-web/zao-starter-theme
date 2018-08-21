@@ -1,0 +1,13 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Objects: _icons
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.o-icon {
+  width: rem-calc(25);
+  height: rem-calc(25);
+
+  &--lrg {
+    width: rem-calc(50);
+    height: rem-calc(50);
+  }
+}
