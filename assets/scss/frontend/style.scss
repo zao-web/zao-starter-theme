@@ -7,9 +7,62 @@
 // Settings
 // Variables and site settings live here
 // - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'settings/unit',
+		'settings/variables';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Tools
+// Contains functions / mixins to be used, it does not output any code.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'tools/value',
+		'tools/selector',
+		'tools/breakpoint',
+		'tools/mixins';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Vendor
+// 3rd Party Files (Ideally this should be very low)
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'vendor/wordpress';
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 // Base
 // Very broad area of styling.
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-@import 'base/reset';
+@import 'base/reset',
+		'base/base';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Layout
+// Contains all the information for the grid.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Objects
+// Objects are designed patterns, from a pattern library or very inique items such as buttons, typography etc. 
+// Changing these will affect major parts of the site.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'objects/typography',
+		'objects/buttons',
+		'objects/lists',
+		'objects/icons',
+		'objects/pagination',
+		'objects/breadcrumbs',
+		'objects/skip-to-content';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Components
+// Specific User Interface parts live here.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Utilities
+// Utilities / helpers which are used throughout the site. This is very specific code bits.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'utilities/helpers';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Trumps
+// Trumps are hacky and necessary to get the job done. This is very specific code bits.
+// Use these sparingly, often with the purpose to refactor to a better solution later.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
