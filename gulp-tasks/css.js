@@ -24,12 +24,12 @@ gulp.task( 'css', ( cb ) => {
 
 	pump( [
 		gulp.src( fileSrc ),
-		sass().on('error', sass.logError),
 		sourcemaps.init( {
 			loadMaps: true
 		} ),
+		sass().on('error', sass.logError),
 		postcss( taskOpts ),
-		sourcemaps.write( './css', {
+		sourcemaps.write( './scss', {
 			mapFile: function( mapFilePath ) {
 				return mapFilePath.replace( '.css.map', '.min.css.map' );
 			}
