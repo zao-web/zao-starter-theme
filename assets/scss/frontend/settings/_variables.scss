@@ -1,0 +1,160 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Settings: _variables
+// Contains a number of variables which are used through out the site
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Color Variables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Local Colors
+// These should only be referenced in this file
+// - - - - - - - -
+$white: #FBFBFB !default;
+$light-grey: #F0F0F0 !default;
+$silver: #BFBFBF !default;
+$dark-grey: #202021 !default;
+$black: #000000 !default;
+$ebony-clay: #242a39 !default;
+$red: #b74a48 !default;
+$orange: #ffae00 !default;
+$green: #26b27b !default;
+$turquoise: #40E4B5;
+
+// Global Colors
+// These should be used outside of this file
+// - - - - - - - -
+$palette-primary: $ebony-clay;
+$palette-accent: $turquoise;
+$palette-secondary: $light-grey;
+$palette-tertiary: $white;
+
+$palette-error: $red;
+$palette-warning: $orange;
+$palette-success: $green;
+
+$palette-heading: $dark-grey;
+$palette-paragraph: $dark-grey;
+$palette-anchor: inherit;
+
+$palette-border: $silver;
+
+// Social Media Colors
+// - - - - - - - -
+$palette-twitter: #00aced !default;
+$palette-facebook: #3b5998 !default;
+$palette-pinterest: #cb2027 !default;
+$palette-instagram: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%) !default;
+$palette-google-plus: #dd4b39 !default;
+$palette-linkedin: #007bb6 !default;
+$palette-youtube: #bb0000 !default;
+$palette-houzz: #7ac142 !default;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Typography
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+$global-font-size: 62.5%;
+$font-size-primary: 1.6rem;
+
+// Font Sizes
+// - - - - - - - -
+$font-size-heading-one: 5.4rem;
+$font-size-heading-two: 4.4rem;
+$font-size-heading-three: 3.4rem;
+$font-size-heading-four: 2.4rem;
+$font-size-heading-five: 1.6rem;
+$font-size-heading-six: 1.4rem;
+$font-size-small: 80%;
+
+
+// Font Famlily
+// - - - - - - - -
+$font-family-normal: system-ui, sans-serif;
+$font-family-heavy: $font-family-normal;
+$font-family-light: $font-family-normal;
+
+
+// Line Heights
+// - - - - - - - -
+$line-height-base: 1.5 !default;
+$line-height-headings: 1.2 !default;
+
+// Forms
+// - - - - - - - -
+$global-form-input-border-color: $palette-border;
+$global-form-input-disabled-color: #e6e6e6;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Spacing
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+$spacing-default: rem-calc(35);
+$spacing-primary: rem-calc(60);
+$spacing-secondary: rem-calc(25);
+$spacing-tertiary: rem-calc(15);
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Z Index index
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+$z-stack: site, mobileMenu, siteHeader, subMenu, skipToContent, siteOverlay, modalBg, modal;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Misc Variables
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+$global-border-radius: 0.0rem;
+$global-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Layout & Grid
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+// Select the type of grid
+// 'normal' = flexbox, 'legacy' = float
+// - - - - - - - -
+$global-grid-select: 'normal';
+
+// Grid Width
+// - - - - - - - -
+$global-width: 130rem;
+
+$global-left: left;
+$global-right: right;
+
+
+// Breakpoint Sizes
+// Pixels are converted to Em
+// - - - - - - - -
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 1065px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+) !default;
+
+$breakpoint-classes: (small medium large) !default;
+
+// The maximum width of a row.
+// - - - - - - - -
+$grid-row-width: $global-width;
+
+// The default column count of a grid. 
+// Changing this value affects the logic of the grid mixins, and the number of CSS classes output.
+// - - - - - - - -
+$grid-column-count: 12 !default;
+
+// The amount of space between columns at different screen sizes. 
+// To use just one size, set the variable to a number instead of a map.
+// Pixels are converted to Rem
+// - - - - - - - -
+$grid-column-gutter: (
+  small: 20px,
+  medium: 30px,
+) !default;
+
+// If `true`, the last column in a row will align to the opposite edge of the row.
+// - - - - - - - -
+$grid-column-align-edge: true;
+
+// The highest number of `.x-up` classes available when using the block grid CSS.
+// - - - - - - - -
+$block-grid-max: 8;
