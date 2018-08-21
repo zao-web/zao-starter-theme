@@ -1,0 +1,17 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Objects: _skip-to-content
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.o-skip-to-content {
+  @include element-invisible;
+
+  &:focus {
+    @include element-invisible-off;
+    display: inline-block;
+    padding: rem-calc(15 23 14);
+    text-decoration: none;
+    z-index: index($z-stack, skipToContent);
+    background-color: $palette-primary;
+    color: $palette-secondary;
+  }
+}
