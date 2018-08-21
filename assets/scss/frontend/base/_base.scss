@@ -1,0 +1,292 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Base: _base
+// Style Base Elements
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Variables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$body-bg-color: $palette-secondary;
+$body-text-color: $palette-paragraph;
+$body-font: $font-family-normal;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Global Elements
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: $global-font-size;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @include text-rendering('true');
+  -webkit-tap-highlight-color: transparent;
+  background-color: $body-bg-color;
+  font-family: $font-family-normal;
+  font-size: $font-size-primary;
+  color: $body-text-color;
+  line-height: $line-height-base;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: $palette-border;
+  margin-top: rem-calc(16);
+  margin-bottom: rem-calc(16);
+}
+
+table {
+  max-width: 100%;
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid $palette-border;
+  border-collapse: collapse;
+  margin-bottom: $spacing-tertiary;
+
+  td {
+    border: 1px solid $palette-border;
+    padding: 1rem;
+  }
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+abbr {
+  cursor: help;
+}
+
+address {
+  font-style: normal;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Typography
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-family: $font-family-normal;
+  font-weight: normal;
+  line-height: $line-height-headings;
+}
+
+ul {
+  margin: 0 0 rem-calc(10);
+}
+
+p {
+  font-size: inherit;
+  line-height: inherit;
+  margin-top: 0;
+  margin-bottom: rem-calc(25);
+}
+
+strong {
+  font-family: $font-family-heavy;
+  font-weight: normal;
+}
+
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding: $spacing-tertiary;
+  background-color: $palette-tertiary;
+
+  p {
+    margin-bottom: rem-calc(10);
+  }
+}
+
+small {
+  font-size: $font-size-small;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Links / Buttons
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+a {
+  color: $palette-anchor;
+
+  @include hocus {
+    text-decoration: none;
+  }
+}
+
+a,
+input[type="submit"],
+input[type="button"],
+button {
+  cursor: pointer;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Form Elemenets
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Variables
+// - - - - - - - -
+$input-fields-border-color: $palette-border;
+$input-fields-height: rem-calc(40);
+$input-fields-line-height: $line-height-base;
+$input-fields-padding: rem-calc(10);
+$input-fields-spacing-bottom: rem-calc(10);
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  display: block;
+  margin: 0;
+}
+
+// Style all inputs
+#{text-inputs()},
+textarea {
+  appearance: none;
+  display: block;
+  box-shadow: none;
+  border-radius: $global-border-radius;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $input-fields-border-color;
+  width: 100%;
+  min-height: $input-fields-height;
+  font-size: inherit;
+  color: $palette-paragraph;
+  line-height: $input-fields-line-height;
+  padding: $input-fields-padding;
+  margin-bottom: $input-fields-spacing-bottom;
+
+  &:focus {
+    outline: none;
+    border-color: $palette-primary;
+  }
+
+  &::placeholder {
+    color: sliver;
+  }
+
+  &:disabled, &[readonly] {
+    background: $global-form-input-disabled-color;
+    cursor: not-allowed;
+  }
+}
+
+// Give all checkboxes and radio inputs hover cursor
+[type="checkbox"] + label[for], 
+[type="radio"] + label[for] {
+  cursor: pointer;
+}
+
+[type="checkbox"]:disabled,
+[type="radio"]:disabled {
+  cursor: not-allowed;
+}
+
+// For the File Upload button hack, give the label a cursor
+[type="file"] + label {
+  cursor: pointer;
+}
+
+// Give all checkboxes and radio inputs basic styling
+[type="checkbox"] + label[for],
+[type="radio"] + label[for] {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: rem-calc(8);
+  margin-right: rem-calc(16);
+  margin-bottom: 0;
+}
+
+// Give file, checkboxes and radio inputs spacing
+[type="file"], [type="checkbox"], [type="radio"] {
+  margin-bottom: $spacing-tertiary;
+}
+
+textarea {
+  resize: vertical;
+  height: auto;
+}
+
+select {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: $global-border-radius;
+  border: 1px solid $palette-border;
+  margin-bottom: $spacing-tertiary;
+  padding: $spacing-tertiary;
+  color: $palette-primary;
+  height: 40px;
+  line-height: 5;
+  background-color: white;
+  background-image: none;
+  background-clip: padding-box;
+
+  &:focus {
+    outline: none;
+    border-color: $palette-paragraph;
+  }
+
+  &:disabled, &[readonly] {
+    background: $global-form-input-disabled-color;
+    cursor: not-allowed;
+  }
+}
+
+select[multiple] {
+  height: auto;
+  background-image: none;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Highlighting
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+::selection {
+  @include selection;
+}
+
+::moz-selection {
+  @include selection;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// iFrame Responivness
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@include breakpoint(small only) {
+  iframe {
+      width: 100%;
+  }
+}
