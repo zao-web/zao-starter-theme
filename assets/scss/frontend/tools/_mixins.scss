@@ -1,0 +1,180 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Tools: Mixins
+// Commonly used across all files
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Visually Shown
+// Will show the visually hidden element
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin visually-show($z-index) {
+	opacity: 1;
+	visibility: visible;
+	z-index: $z-index;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Visually Hidden
+// Visually Hidden so that it can have transisitions applyed to it.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin visually-hidden($z-index) {
+	opacity: 0;
+	visibility: hidden;
+	z-index: $z-index;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// The main transisition throughout the site
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin main-transisition {
+  transition: all 150ms ease-in-out;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Unstyled list
+// Removes all basic list styling
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin unstyled-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Background Image
+// Includes a number of repeatable background-image items
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin background-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Applies the micro clearfix hack popularized by Nicolas Gallagher. Include this mixin on a container if its children are all floated, to give the container a proper height.
+// The clearfix is augmented with specific styles to prevent borders in flexbox environments
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin clearfix {
+	&::after,
+	&::before {
+		content: ' ';
+		display: table;
+		flex-basis: 0;
+		order: 1;
+	}
+
+	&::after {
+		clear: both;
+	}
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Makes an element visually hidden, but still accessible to keyboards and assistive devices.
+// @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin element-invisible {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+/// Reverses the output created by the `element-invisible()` mixin.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin element-invisible-off {
+	position: static !important;
+	height: auto;
+	width: auto;
+	overflow: visible;
+	clip-path: auto;
+  white-space: nowrap;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Vertically centers the element inside of its first non-static parent,
+// @link http://www.sitepoint.com/centering-with-sass/
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin vertical-center {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Horizontally centers the element inside of its first non-static parent,
+// @link http://www.sitepoint.com/centering-with-sass/
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin horizontal-center {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Absolutely centers the element inside of its first non-static parent,
+// @link http://www.sitepoint.com/centering-with-sass/ 
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Text Rendering
+// Toggle text rendering
+// if 'false' then mixin won't output
+// if 'true' then mixin will output
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin text-rendering($output) {
+	@if $output == 'true' {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	} @else if $output == 'false' {
+		// output nothing
+	}
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Selection
+// For Highlight, change to match your design.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin selection {
+  background-color: $palette-primary;
+	color: $palette-tertiary;
+	text-shadow: none;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Hocus
+// Style both Hover and Focus
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin hocus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Iterates through breakpoints defined in `$breakpoint-classes` and prints the CSS inside the mixin at each breakpoint's media query. Use this with the grid, or any other component that has responsive classes.
+// @param {Boolean} $small [true] - If `false`, the mixin will skip the `small` breakpoint. Use this with components that don't prefix classes with `small-`, only `medium-` and up.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin -zf-each-breakpoint($small: true) {
+	$map: $breakpoint-classes;
+	@if not $small {
+		$map: map-remove($map, small);
+	}
+	@each $size in $map {
+		$-zf-size: $size !global;
+		@include breakpoint($size) {
+			 @content;
+		}
+	}
+}
