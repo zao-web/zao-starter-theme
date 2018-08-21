@@ -1,0 +1,18 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Tools: _value
+// Mainly contains getting deep info from map
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Finds a value in a nested map.
+// @link https://css-tricks.com/snippets/sass/deep-getset-maps/
+// @param {Map} $map - Map to pull a value from.
+// @param {String} $keys... - Keys to use when looking for a value.
+// @returns {Mixed} The value found in the map.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
