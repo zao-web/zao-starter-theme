@@ -2,15 +2,18 @@
 /**
  * Menu Walker
  *
- * Menu walker for wp_nav_menu function.
- * Cleans up menu output and uses BEM syntax.
- *
  * @package WordPress
  * @subpackage ZaoStarterTheme
  * @since 1.0
  * @version 2.0
  */
 
+/**
+ * Create the Menu Walker
+ *
+ * Menu walker for wp_nav_menu function.
+ * Cleans up menu output and uses BEM syntax.
+ */
 class Zao_Nav_Walker extends Walker_Nav_Menu {
 	/**
 	 * Starts the list before the elements are added.
@@ -151,10 +154,9 @@ class Zao_Nav_Walker extends Walker_Nav_Menu {
 	/**
 	 * Appends the appropriate class name to the menu item
 	 *
-	 * @param  string  &$item Passed by reference. Used to append additional content.
+	 * @param  string  $item Passed by reference. Used to append additional content.
 	 * @param  array   $args  An array of arguments. @see wp_nav_menu()
 	 * @param  integer $depth Depth of page. Not Used.
-	 * @return array    $classes An arrary of menu you item class names
 	 */
 	public function prepare_el_classes( &$item, $args = array(), $depth = 0 ) {
 		$block   = isset( $args->block ) ? $args->block : explode( ' ', $args->menu_class );
