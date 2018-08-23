@@ -21,10 +21,10 @@
 function zao_comment_class( $class = '', $comment_id = null, $post_id = null ) {
 	global $comment_alt, $comment_depth, $comment_thread_alt;
 
-	$classes = array();
-	$zao_comment_alt = $comment_alt;
+	$classes           = array();
+	$zao_comment_alt   = $comment_alt;
 	$zao_comment_depth = $comment_depth;
-	$zao_thread_alt = $comment_thread_alt;
+	$zao_thread_alt    = $comment_thread_alt;
 
 	$comment = get_comment( $comment_id );
 	if ( ! $comment ) {
@@ -38,13 +38,14 @@ function zao_comment_class( $class = '', $comment_id = null, $post_id = null ) {
 	$classes[] = ( empty( $comment->comment_type ) ) ? $base_class : $comment->comment_type;
 
 	// Add classes for comment authors that are registered users.
-	if ( $comment->user_id > 0 && get_userdata( $comment->user_id === $user ) ) {
-		$classes[] = $base_class . '--byuser';
+	$user = get_userdata( $comment->user_id );
+	if ( $user && $comment->user_id > 0 ) {
+		$classes[] = $base_class . '--by-user';
+
 		// For comment authors who are the author of the post
-		if ( get_post( $post_id ) === $post ) {
-			if ( $comment->user_id === $post->post_author ) {
-				$classes[] = $base_class . '--bypostauthor';
-			}
+		$post = get_post( $post_id );
+		if ( $post && $comment->user_id === $post->post_author ) {
+			$classes[] = $base_class . '--by-postauthor';
 		}
 	}
 
