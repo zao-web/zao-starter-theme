@@ -54,10 +54,11 @@ if ( post_password_required() ) {
 			?>
 		</h2>
 
-		<ol class="c-comment-list">
+		<ol class="l-comment-list">
 			<?php
 				wp_list_comments(
 					array(
+						'walker'      => new Comment_Walker(),
 						'avatar_size' => 100,
 						'style'       => 'ol',
 						'short_ping'  => true,
