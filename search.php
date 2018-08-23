@@ -12,7 +12,7 @@ get_header(); ?>
 <?php if ( have_posts() ) : ?>
 
 	<!-- Title for search results containing search term -->
-	<h1 class="heading-1">
+	<h1 class="o-heading-1">
 	<?php
 		printf( esc_html__( 'Search Results for: %s', 'zao-starter-theme' ), '<span>' . esc_html( get_search_query() ) . '</span>' );
 	?>

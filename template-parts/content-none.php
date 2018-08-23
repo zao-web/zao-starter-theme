@@ -7,7 +7,7 @@
 
 ?>
 
-<h1 class="heading-1"><?php esc_html_e( 'Nothing Found', 'zao-starter-theme' ); ?></h1>
+<h1 class="o-heading-1"><?php esc_html_e( 'Nothing Found', 'zao-starter-theme' ); ?></h1>
 
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
