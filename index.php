@@ -2,7 +2,7 @@
 /**
  * The main template file
  *
- * @package ThemeScaffold
+ * @package ZaoStarterTheme
  */
 
 get_header(); ?>
