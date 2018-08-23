@@ -21,6 +21,7 @@ function setup() {
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
+	add_action( 'widgets_init', $n( 'widgets_init' ) );
 }
 
 /**
@@ -51,10 +52,27 @@ function theme_setup() {
 		)
 	);
 
-	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menus(
 		array(
 			'primary' => esc_html__( 'Primary Menu', 'zao-starter-theme' ),
+		)
+	);
+
+}
+
+/**
+ * Registers the sidebars.
+ */
+function widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => __( 'Main Sidebar', 'zao-starter-theme' ),
+			'id'            => 'sidebar-1',
+			'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'zao-starter-theme' ),
+			'before_widget' => '<li id="%1$s" class="o-widget %2$s">',
+			'after_widget'  => '</li>',
+			'before_title'  => '<h2 class="o-widget__title">',
+			'after_title'   => '</h2>',
 		)
 	);
 }
