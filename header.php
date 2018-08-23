@@ -15,7 +15,7 @@
 	<body <?php body_class(); ?>>
 		<?php do_action( 'after_body' ); ?>
 
-		<!-- .site-wrapper -->
+		<!-- .site -->
 		<div id="page" class="site">
 
 		<!-- Skip to content -->
